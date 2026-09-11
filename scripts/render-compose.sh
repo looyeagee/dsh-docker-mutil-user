@@ -58,6 +58,8 @@ fi
       - /shared/default-workspace.cordis.yml
       - --patch
       - /shared/default-flat-list.cordis.yml
+      - --patch
+      - /shared/slash-skill-first.cordis.yml
       - --no-open
     extra_hosts:
       - host.docker.internal:host-gateway

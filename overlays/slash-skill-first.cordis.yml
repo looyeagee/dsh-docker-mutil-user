@@ -1,0 +1,4 @@
+# Slash menu: put the 技能 group above 添加 / 指令.
+- insert:
+    - id: slash-skill-first
+      name: './slash-skill-first-plugin/index.mjs'
