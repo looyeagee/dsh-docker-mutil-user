@@ -37,11 +37,16 @@ bash scripts/render-compose.sh
 docker compose up --build -d
 ```
 
+## 共享 MCP
+
+所有用户容器通过同一份 `--patch` overlay 接入外部 Streamable HTTP MCP，工具名是 `mcp__echo__echo`。MCP 进程不在本仓库启动：先在旁路的 `mcp-echo` 目录 `docker compose up --build -d`，用户容器经 `host.docker.internal:8001` 访问。新增共享 MCP 时改 `overlays/shared-mcp.yml` 并重启对应用户容器。
+
 ## 布局
 
 ```
 openresty/users.lua           明文账号，加载进内存
 openresty/*.lua               登录、验 Cookie、选上游
+overlays/shared-mcp.yml       所有用户共用的 MCP overlay
 users/<id>/                   每用户 DSH home 与 workspace
 scripts/render-compose.sh     从 users.lua 生成 compose
 docker-compose.users.yml      生成文件，不要手改

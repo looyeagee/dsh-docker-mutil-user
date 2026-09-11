@@ -36,6 +36,7 @@ fi
       - \${HARNESS_PATH:-../deepseek-harness}:/app:ro
       - ./users/${id}/dsh_home:/root/.dsh
       - ./skills:/root/.dsh/skills:ro
+      - ./overlays/shared-mcp.yml:/shared/mcp.cordis.yml:ro
       - ./users/${id}/workspace:/workspace
     command:
       - node
@@ -45,7 +46,11 @@ fi
       - web
       - --patch
       - /app/apps/cli/config/lan-bind.overlay.yml
+      - --patch
+      - /shared/mcp.cordis.yml
       - --no-open
+    extra_hosts:
+      - host.docker.internal:host-gateway
     networks:
       - internal
 EOF

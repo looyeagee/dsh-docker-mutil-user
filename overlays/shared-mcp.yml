@@ -1,0 +1,8 @@
+# Shared Streamable HTTP MCP servers. Applied to every user container.
+- insert:
+    - id: mcp-echo
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: echo
+        transport: streamable-http
+        url: http://host.docker.internal:8001/mcp
