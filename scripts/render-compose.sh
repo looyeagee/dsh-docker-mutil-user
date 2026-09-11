@@ -50,6 +50,8 @@ fi
       - /shared/shared-mcp.yml
       - --patch
       - /shared/whoami.cordis.yml
+      - --patch
+      - /shared/suppress-welcome.cordis.yml
       - --no-open
     extra_hosts:
       - host.docker.internal:host-gateway

@@ -43,13 +43,16 @@ docker compose up --build -d
 
 侧栏左下角「设置」下方显示「登录用户：<uid>」，点击后确认则请求 `GET /logout`。由 `overlays/whoami.cordis.yml` 接到每个用户容器。
 
+`overlays/suppress-welcome.cordis.yml` 用更低 priority 盖住 shipped 的 `welcome-notice` 步骤，新建空白会话时不再弹出「内测声明」。
+
 ## 布局
 
 ```
 openresty/users.lua           明文账号，加载进内存
 openresty/*.lua               登录、验 Cookie、选上游、/me
 overlays/shared-mcp.yml       所有用户共用的 MCP overlay
-overlays/whoami.cordis.yml    侧栏显示网关登录名
+overlays/whoami.cordis.yml            侧栏显示网关登录名
+overlays/suppress-welcome.cordis.yml  屏蔽「内测声明」onboarding
 users/<id>/                   每用户 DSH home 与 workspace
 scripts/render-compose.sh     从 users.lua 生成 compose
 docker-compose.users.yml      生成文件，不要手改

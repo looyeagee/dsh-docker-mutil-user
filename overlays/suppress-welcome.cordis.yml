@@ -1,0 +1,4 @@
+# Shadow the shipped welcome-notice onboarding step so 内测声明 never mounts.
+- insert:
+    - id: suppress-welcome
+      name: './suppress-welcome-plugin/index.mjs'
