@@ -1,0 +1,4 @@
+# Sidebar HTML under /workspace/ loads via the gateway so relative assets work.
+- insert:
+    - id: workspace-html-preview
+      name: './workspace-html-preview-plugin/index.mjs'

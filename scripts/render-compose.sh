@@ -60,6 +60,8 @@ fi
       - /shared/default-flat-list.cordis.yml
       - --patch
       - /shared/slash-skill-first.cordis.yml
+      - --patch
+      - /shared/workspace-html-preview.cordis.yml
       - --no-open
     extra_hosts:
       - host.docker.internal:host-gateway

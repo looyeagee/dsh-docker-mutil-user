@@ -57,6 +57,8 @@ docker compose up --build -d
 
 登录后打开 `/workspace/` 可浏览并下载当前用户工作区里的文件（nginx `autoindex`，仍要网关 Cookie）。
 
+`overlays/workspace-html-preview.cordis.yml` 让侧栏预览 `/workspace/` 下的 HTML 时，iframe 直接打开网关上的同一路径，这样同目录图片等相对资源能加载；不再只用 blob。
+
 ## 布局
 
 ```
@@ -71,6 +73,7 @@ overlays/hide-settings-sections.cordis.yml  设置弹框去掉模型 / 插件 / 
 overlays/default-workspace.cordis.yml     默认登记 /workspace 为工作区
 overlays/default-flat-list.cordis.yml     分组方式默认「单列表」
 overlays/slash-skill-first.cordis.yml     `/` 菜单里技能组排第一
+overlays/workspace-html-preview.cordis.yml  侧栏 HTML 走 `/workspace/` 网关路径
 users/<id>/                   每用户 DSH home 与 workspace
 scripts/render-compose.sh     从 users.lua 生成 compose
 docker-compose.users.yml      生成文件，不要手改
