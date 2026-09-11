@@ -1,0 +1,15 @@
+# Bind all interfaces without passing --host 0.0.0.0 (the CLI flag is rejected).
+# A later patch replaces this row's whole config.
+- id: webserver
+  config:
+    host: 0.0.0.0
+    port: !!js ctx.webStartup.port ?? 3080
+    compression: gzip
+    compressionLevel: 1
+    compressionThresholdBytes: 1024
+
+# Skip /?token= cookie exchange. OpenResty must be the only published listener.
+- insert:
+    - id: openresty-proxy-auth
+      name: './openresty-proxy-auth.mjs'
+      inject: [connection]

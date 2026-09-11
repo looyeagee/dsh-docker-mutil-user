@@ -50,7 +50,9 @@ docker compose up --build -d
 ```
 openresty/users.lua           明文账号，加载进内存
 openresty/*.lua               登录、验 Cookie、选上游、/me
-overlays/shared-mcp.yml       所有用户共用的 MCP overlay
+overlays/lan-bind.cordis.yml          容器内监听 0.0.0.0，并关掉 cookie / Host 校验
+overlays/openresty-proxy-auth.mjs     lan-bind 插入的 Connection 插件
+overlays/shared-mcp.yml               所有用户共用的 MCP overlay
 overlays/whoami.cordis.yml            侧栏显示网关登录名
 overlays/suppress-welcome.cordis.yml  屏蔽「内测声明」onboarding
 users/<id>/                   每用户 DSH home 与 workspace

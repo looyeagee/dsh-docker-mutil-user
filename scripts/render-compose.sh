@@ -45,7 +45,7 @@ fi
       - /app/apps/cli/src/bin.ts
       - web
       - --patch
-      - /app/apps/cli/config/lan-bind.overlay.yml
+      - /shared/lan-bind.cordis.yml
       - --patch
       - /shared/shared-mcp.yml
       - --patch
