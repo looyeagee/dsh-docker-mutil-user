@@ -1,0 +1,5 @@
+# Seed /workspace as the user's DSH project so a fresh home skips "添加工作区".
+- insert:
+    - id: default-workspace
+      name: './default-workspace.mjs'
+      inject: [workspaceRegistry]
