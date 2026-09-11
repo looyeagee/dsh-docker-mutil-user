@@ -1,0 +1,4 @@
+# Hide Models, Plugins, and Agent presets from the settings dialog.
+- insert:
+    - id: hide-settings-sections
+      name: './hide-settings-sections-plugin/index.mjs'

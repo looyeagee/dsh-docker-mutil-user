@@ -45,6 +45,8 @@ docker compose up --build -d
 
 `overlays/suppress-welcome.cordis.yml` 用更低 priority 盖住 shipped 的 `welcome-notice` 步骤，新建空白会话时不再弹出「内测声明」。
 
+`overlays/hide-settings-sections.cordis.yml` 从设置弹框导航里拿掉「模型」「插件」「Agent 预设」，只留「通用」。
+
 ## 布局
 
 ```
@@ -55,6 +57,7 @@ overlays/openresty-proxy-auth.mjs     lan-bind 插入的 Connection 插件
 overlays/shared-mcp.yml               所有用户共用的 MCP overlay
 overlays/whoami.cordis.yml            侧栏显示网关登录名
 overlays/suppress-welcome.cordis.yml  屏蔽「内测声明」onboarding
+overlays/hide-settings-sections.cordis.yml  设置弹框去掉模型 / 插件 / Agent 预设
 users/<id>/                   每用户 DSH home 与 workspace
 scripts/render-compose.sh     从 users.lua 生成 compose
 docker-compose.users.yml      生成文件，不要手改
