@@ -9,6 +9,7 @@
 - 账号密码明文写在 `openresty/users.lua`，进程启动时 `require` 进内存；改完后 `docker compose exec openresty openresty -s reload`。
 - 网关 Cookie 是唯一闸门。对公网必须 TLS，并把 `COOKIE_SECURE=1`。
 - 浏览器拉 `/manifest.webmanifest` 不带 Cookie（`<link rel=manifest>` 默认 credentials omit），这条 GET/HEAD 免登录，反代到一个已配置用户容器。
+- 登录后访问 `/workspace/` 是该用户工作区的 nginx 目录索引，可浏览和下载文件；只映射 `users/<uid>/workspace`，不开放 `dsh_home`。
 
 ## 启动
 
@@ -53,6 +54,8 @@ docker compose up --build -d
 `overlays/default-flat-list.cordis.yml` 在浏览器还没有分组偏好时，把侧栏「分组方式」写成「单列表」。已经选过的浏览器会保持上次选择。
 
 `overlays/slash-skill-first.cordis.yml` 把输入框 `/` 菜单里的「技能」组排到「添加」「指令」前面。
+
+登录后打开 `/workspace/` 可浏览并下载当前用户工作区里的文件（nginx `autoindex`，仍要网关 Cookie）。
 
 ## 布局
 

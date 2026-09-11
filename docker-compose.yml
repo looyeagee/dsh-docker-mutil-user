@@ -21,6 +21,7 @@ services:
       - ./openresty/logout.lua:/usr/local/openresty/nginx/conf/logout.lua:ro
       - ./openresty/me.lua:/usr/local/openresty/nginx/conf/me.lua:ro
       - ./openresty/users.lua:/usr/local/openresty/nginx/conf/users.lua:ro
+      - ./users:/users:ro
     networks:
       - internal
 

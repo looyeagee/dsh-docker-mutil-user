@@ -33,4 +33,5 @@ if not uid then
 end
 
 ngx.ctx.gw_uid = uid
+ngx.var.gw_uid = uid
 ngx.var.dsh_upstream = 'dsh-' .. uid .. ':3080'
