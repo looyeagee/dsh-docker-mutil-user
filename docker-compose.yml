@@ -1,0 +1,28 @@
+include:
+  - docker-compose.users.yml
+
+services:
+  openresty:
+    image: openresty/openresty:bookworm
+    restart: unless-stopped
+    ports:
+      - "${GW_PORT:-80}:80"
+    environment:
+      DSH_GW_SECRET: ${DSH_GW_SECRET:?set DSH_GW_SECRET in .env}
+      COOKIE_SECURE: ${COOKIE_SECURE:-0}
+      COOKIE_TTL_SECONDS: ${COOKIE_TTL_SECONDS:-43200}
+    volumes:
+      - ./openresty/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+      - ./openresty/access.lua:/usr/local/openresty/nginx/conf/access.lua:ro
+      - ./openresty/gw.lua:/usr/local/openresty/nginx/conf/gw.lua:ro
+      - ./openresty/hmac.lua:/usr/local/openresty/nginx/conf/hmac.lua:ro
+      - ./openresty/login.lua:/usr/local/openresty/nginx/conf/login.lua:ro
+      - ./openresty/login.html:/usr/local/openresty/nginx/conf/login.html:ro
+      - ./openresty/logout.lua:/usr/local/openresty/nginx/conf/logout.lua:ro
+      - ./openresty/users.lua:/usr/local/openresty/nginx/conf/users.lua:ro
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge

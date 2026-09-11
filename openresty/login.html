@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSH 登录</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #111;
+      color: #eee;
+    }
+    form {
+      width: min(22rem, calc(100vw - 2rem));
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid #333;
+      border-radius: 0.75rem;
+      background: #1a1a1a;
+    }
+    h1 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+    label { display: grid; gap: 0.35rem; font-size: 0.9rem; }
+    input {
+      padding: 0.55rem 0.65rem;
+      border: 1px solid #444;
+      border-radius: 0.4rem;
+      background: #111;
+      color: inherit;
+    }
+    button {
+      margin-top: 0.25rem;
+      padding: 0.6rem 0.75rem;
+      border: 0;
+      border-radius: 0.4rem;
+      background: #3b82f6;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .error {
+      margin: 0;
+      padding: 0.5rem 0.65rem;
+      border-radius: 0.4rem;
+      background: #3f1d1d;
+      color: #fecaca;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <form method="post" action="/login" autocomplete="username">
+    <h1>DSH 网关登录</h1>
+    {{error}}
+    <label>用户名
+      <input name="username" required autofocus value="{{username}}">
+    </label>
+    <label>密码
+      <input name="password" type="password" required>
+    </label>
+    <button type="submit">登录</button>
+  </form>
+</body>
+</html>
