@@ -26,6 +26,19 @@ function _M.sign(uid)
   return body .. '.' .. hmac.to_base64url(hmac.sha256(_M.secret(), body))
 end
 
+-- Stable fallback uid when a request has no gateway cookie.
+function _M.default_uid()
+  local chosen
+  for uid in pairs(users) do
+    if type(uid) == 'string' and uid:find(_M.UID_PATTERN) and type(users[uid]) == 'string' then
+      if chosen == nil or uid < chosen then
+        chosen = uid
+      end
+    end
+  end
+  return chosen
+end
+
 function _M.verify(token)
   if type(token) ~= 'string' then
     return nil

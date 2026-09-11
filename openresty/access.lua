@@ -20,6 +20,14 @@ if gw.secret() == '' then
 end
 
 local uid = gw.verify(ngx.var['cookie_' .. gw.COOKIE])
+-- <link rel=manifest> is fetched without cookies (credentials omitted).
+local method = ngx.var.request_method
+if not uid
+  and ngx.var.uri == '/manifest.webmanifest'
+  and (method == 'GET' or method == 'HEAD')
+then
+  uid = gw.default_uid()
+end
 if not uid then
   return reject()
 end

@@ -8,6 +8,7 @@
 - 工作容器挂了 `openresty-proxy-auth`：谁能连上该容器 3080，谁就拥有完整 Host API。**默认不 publish 3080。**
 - 账号密码明文写在 `openresty/users.lua`，进程启动时 `require` 进内存；改完后 `docker compose exec openresty openresty -s reload`。
 - 网关 Cookie 是唯一闸门。对公网必须 TLS，并把 `COOKIE_SECURE=1`。
+- 浏览器拉 `/manifest.webmanifest` 不带 Cookie（`<link rel=manifest>` 默认 credentials omit），这条 GET/HEAD 免登录，反代到一个已配置用户容器。
 
 ## 启动
 
