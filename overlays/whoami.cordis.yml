@@ -1,0 +1,4 @@
+# Sidebar foot: show the gateway login name after Settings.
+- insert:
+    - id: gateway-whoami
+      name: './whoami-plugin/index.mjs'

@@ -24,4 +24,5 @@ if not uid then
   return reject()
 end
 
+ngx.ctx.gw_uid = uid
 ngx.var.dsh_upstream = 'dsh-' .. uid .. ':3080'
