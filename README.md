@@ -49,6 +49,8 @@ docker compose up --build -d
 
 `overlays/default-workspace.cordis.yml` 在启动时把容器内的 `/workspace` 登记为 DSH 工作区；同一路径重复登记会复用已有记录。侧栏会自动选中它（没有当前会话时）。
 
+`overlays/default-flat-list.cordis.yml` 在浏览器还没有分组偏好时，把侧栏「分组方式」写成「单列表」。已经选过的浏览器会保持上次选择。
+
 ## 布局
 
 ```
@@ -61,6 +63,7 @@ overlays/whoami.cordis.yml            侧栏显示网关登录名
 overlays/suppress-welcome.cordis.yml  屏蔽「内测声明」onboarding
 overlays/hide-settings-sections.cordis.yml  设置弹框去掉模型 / 插件 / Agent 预设
 overlays/default-workspace.cordis.yml     默认登记 /workspace 为工作区
+overlays/default-flat-list.cordis.yml     分组方式默认「单列表」
 users/<id>/                   每用户 DSH home 与 workspace
 scripts/render-compose.sh     从 users.lua 生成 compose
 docker-compose.users.yml      生成文件，不要手改

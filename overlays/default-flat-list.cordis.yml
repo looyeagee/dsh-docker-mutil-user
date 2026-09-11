@@ -1,0 +1,4 @@
+# First visit: session list grouping is 单列表 (localStorage seed before hydrate).
+- insert:
+    - id: default-flat-list
+      name: './default-flat-list-plugin/index.mjs'

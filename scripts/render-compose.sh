@@ -56,6 +56,8 @@ fi
       - /shared/hide-settings-sections.cordis.yml
       - --patch
       - /shared/default-workspace.cordis.yml
+      - --patch
+      - /shared/default-flat-list.cordis.yml
       - --no-open
     extra_hosts:
       - host.docker.internal:host-gateway
