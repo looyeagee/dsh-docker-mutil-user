@@ -11,5 +11,5 @@
 # Skip /?token= cookie exchange. OpenResty must be the only published listener.
 - insert:
     - id: openresty-proxy-auth
-      name: './openresty-proxy-auth.mjs'
+      name: './openresty-proxy-auth-plugin/index.mjs'
       inject: [connection]
