@@ -49,7 +49,7 @@ flowchart TB
 
 ## Overlays
 
-每个用户容器挂同一份 `overlays/`，启动时 `--patch` 进去。`.cordis.yml` 负责插入，`*-plugin/` 里是实现。
+每个用户容器挂同一份 `overlays/`，启动时 `--patch` 进去。`.cordis.yml` 负责插入，`*-plugin/` 里是实现。带 `name` 的 overlay `package.json` 必须同时写 `version`，否则 DeepSeek 官方请求在组 `dsh_plugin_packages` 时会以 `REQUEST_EXTENSION` 失败。
 
 | Overlay | 作用 |
 | --- | --- |
