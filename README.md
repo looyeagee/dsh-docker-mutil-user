@@ -58,6 +58,7 @@ flowchart TB
 | `whoami.cordis.yml` | 侧栏「设置」下方显示登录用户，确认后请求 `GET /logout` |
 | `suppress-welcome.cordis.yml` | 新建空白会话不再弹出「内测声明」 |
 | `hide-settings-sections.cordis.yml` | 设置弹框只留「通用」，去掉模型 / 插件 / Agent 预设 |
+| `hide-feedback.cordis.yml` | 去掉消息上的「好的回答 / 有问题的回答」和斜杠「添加」里的反馈指令 |
 | `default-workspace.cordis.yml` | 启动时把 `/workspace` 登记为工作区；同一路径重复登记会复用 |
 | `default-flat-list.cordis.yml` | 浏览器还没有分组偏好时，侧栏默认「单列表」 |
 | `default-full-access.cordis.yml` | 新会话默认「完全权限」；关掉输入框下拉、设置「通用」权限行和斜杠「指令」里的 `/permission` |

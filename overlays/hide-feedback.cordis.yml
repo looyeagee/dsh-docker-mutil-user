@@ -1,0 +1,9 @@
+# Drop Like/Dislike on assistant messages and /feedback in the 添加 slash group.
+- id: ui-message-feedback
+  disabled: true
+
+- id: command-feedback
+  disabled: true
+
+- id: message-feedback
+  disabled: true

@@ -55,6 +55,8 @@ fi
       - --patch
       - /shared/hide-settings-sections.cordis.yml
       - --patch
+      - /shared/hide-feedback.cordis.yml
+      - --patch
       - /shared/default-workspace.cordis.yml
       - --patch
       - /shared/default-flat-list.cordis.yml
