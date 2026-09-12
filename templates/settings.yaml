@@ -22,3 +22,5 @@ agent-default-model:
   model: MiniMax-M3
 agent-presets:
   modeSelectionEnabled: false
+permission:
+  defaultPreset: danger-full-access

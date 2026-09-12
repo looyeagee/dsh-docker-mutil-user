@@ -59,6 +59,8 @@ fi
       - --patch
       - /shared/default-flat-list.cordis.yml
       - --patch
+      - /shared/default-full-access.cordis.yml
+      - --patch
       - /shared/slash-skill-first.cordis.yml
       - --patch
       - /shared/workspace-html-preview.cordis.yml

@@ -60,6 +60,7 @@ flowchart TB
 | `hide-settings-sections.cordis.yml` | 设置弹框只留「通用」，去掉模型 / 插件 / Agent 预设 |
 | `default-workspace.cordis.yml` | 启动时把 `/workspace` 登记为工作区；同一路径重复登记会复用 |
 | `default-flat-list.cordis.yml` | 浏览器还没有分组偏好时，侧栏默认「单列表」 |
+| `default-full-access.cordis.yml` | 新会话默认「完全权限」；关掉输入框下拉、设置「通用」权限行和斜杠「指令」里的 `/permission` |
 | `slash-skill-first.cordis.yml` | 输入框 `/` 菜单里「技能」排到「添加」「指令」前面 |
 | `workspace-html-preview.cordis.yml` | 侧栏预览 HTML 时 iframe 打开网关上的 `/workspace/`，相对资源能加载 |
 

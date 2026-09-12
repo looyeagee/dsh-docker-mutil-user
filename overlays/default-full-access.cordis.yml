@@ -1,0 +1,16 @@
+# Composition defaults are 完全权限. Drop the picker surfaces the same way
+# hide-feedback drops /feedback: disable the host command and its UI.
+- id: sandbox-policy
+  config:
+    mode: danger-full-access
+    workspaceRoot: !!js process.cwd()
+
+- id: approval
+  config:
+    policy: never
+
+- id: permission
+  disabled: true
+
+- id: ui-permission
+  disabled: true
