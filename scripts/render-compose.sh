@@ -40,9 +40,7 @@ fi
       - ./users/${id}/workspace:/workspace
     command:
       - node
-      - --import
-      - /app/node_modules/tsx/dist/esm/index.mjs
-      - /app/apps/cli/src/bin.ts
+      - /app/apps/cli/lib/bin.js
       - web
       - --patch
       - /shared/lan-bind.cordis.yml
