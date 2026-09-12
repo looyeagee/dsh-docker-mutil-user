@@ -64,6 +64,7 @@ flowchart TB
 | `default-full-access.cordis.yml` | 新会话默认「完全权限」；关掉输入框下拉、设置「通用」权限行和斜杠「指令」里的 `/permission` |
 | `slash-skill-first.cordis.yml` | 输入框 `/` 菜单里「技能」排到「添加」「指令」前面 |
 | `workspace-html-preview.cordis.yml` | 侧栏预览 HTML 时 iframe 打开网关上的 `/workspace/`，相对资源能加载 |
+| `workspace-file-download.cordis.yml` | 工作区是 `/workspace` 时，侧栏文件名右侧加下载，新标签打开网关路径 |
 
 共享 MCP 不在本仓库启动。先在旁路的 `mcp-echo` 目录 `docker compose up --build -d`，用户容器经 `host.docker.internal:8001` 访问。新增共享 MCP 时改 `overlays/shared-mcp.yml` 并重启对应用户容器。
 

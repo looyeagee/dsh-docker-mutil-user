@@ -1,0 +1,4 @@
+# File-tree rows under /workspace get a download control that opens the gateway path.
+- insert:
+    - id: workspace-file-download
+      name: './workspace-file-download-plugin/index.mjs'

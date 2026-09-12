@@ -66,6 +66,8 @@ fi
       - /shared/slash-skill-first.cordis.yml
       - --patch
       - /shared/workspace-html-preview.cordis.yml
+      - --patch
+      - /shared/workspace-file-download.cordis.yml
       - --no-open
     extra_hosts:
       - host.docker.internal:host-gateway
