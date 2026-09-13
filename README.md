@@ -72,8 +72,11 @@ flowchart TB
 
 ```sh
 cp .env.example .env
+bash scripts/build-harness.sh
 docker compose up --build
 ```
+
+`build-harness.sh` 复用 `Dockerfile` 的 `docker-dsh:v1`，起一个 `--rm` 临时容器，对 `HARNESS_PATH`（默认 `../deepseek-harness`）执行 `pnpm install && pnpm run build`。用户容器只读挂载这份产物；Linux 镜像里编，本机 macOS 的 native addon 不能用。传入参数则改跑该命令（例如 `bash scripts/build-harness.sh bash`）。
 
 当前演示账号：`admin` / `admin`。
 
