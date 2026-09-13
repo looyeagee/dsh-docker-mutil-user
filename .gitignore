@@ -1,3 +1,4 @@
 .env
 users/
+docker-compose.users.yml
 .DS_Store

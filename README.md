@@ -73,6 +73,7 @@ flowchart TB
 ```sh
 cp .env.example .env
 bash scripts/build-harness.sh
+bash scripts/render-compose.sh
 docker compose up --build
 ```
 
