@@ -41,7 +41,7 @@ flowchart TB
 | 路径 | 行为 |
 | --- | --- |
 | `/login` `/logout` `/me` | 网关自己处理登录、清 Cookie、返回当前 uid |
-| `/workspace/` | 该用户 workspace 的目录索引（只读 GET/HEAD，不含 `dsh_home`） |
+| `/workspace/` | 该用户 workspace 的目录索引（只读 GET/HEAD，不含 `dsh_home`）。Linux 上 bind-mount 保留属主，agent 常写出 0600/0700，所以 OpenResty worker 以 root 跑，否则会 403 |
 | 其余 | 反代到 `dsh-<uid>:3080` |
 | `/manifest.webmanifest` | 浏览器拉 manifest 不带 Cookie，免登录落到字典序最小的已配置用户 |
 
