@@ -15,12 +15,30 @@ RUN set -eux; \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
+        wget \
         bash \
         git \
         build-essential \
         cmake \
         python3 \
+        python3-pip \
         musl-tools \
+        iputils-ping \
+        iproute2 \
+        bind9-dnsutils \
+        netcat-openbsd \
+        procps \
+        psmisc \
+        lsof \
+        jq \
+        unzip \
+        zip \
+        file \
+        tree \
+        less \
+        vim \
+        rsync \
+        openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 # 容器内挂载仓库时常触发 dubious ownership，信任所有目录
